@@ -189,7 +189,7 @@ vertices land at (0,0), (240,0) and (0,144), so (40,40) is inside it."
                           (gfx:effect-current-technique (effect-of game)))))
             (gfx:apply-effect-pass pass))
           (gfx:draw-user-primitives device :triangle-list (corner-triangle)
-                                    :primitive-count 1)
+                                    :vertex-offset 0 :primitive-count 1)
           ;; And read one pixel of it back, where the renderer can. This is the
           ;; consumer's own evidence that the primitive reached the back buffer,
           ;; obtained through nothing but the public API.
