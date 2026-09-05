@@ -173,7 +173,8 @@ vertices land at (0,0), (240,0) and (0,144), so (40,40) is inside it."
           (setf (pixels-read game)
                 (handler-case
                     (let ((pixel (aref (gfx:get-back-buffer-data
-                                        device :source (xna:make-rectangle 0 0 1 1))
+                                        device :source (xna:make-rectangle 0 0 1 1)
+                                        :start-index 0 :element-count 1)
                                        0)))
                       (format nil "~d,~d,~d,~d"
                               (xna:color-r pixel) (xna:color-g pixel)
@@ -198,7 +199,8 @@ vertices land at (0,0), (240,0) and (0,144), so (40,40) is inside it."
                   (handler-case
                       (let ((pixel (aref (gfx:get-back-buffer-data
                                           device
-                                          :source (xna:make-rectangle 40 40 1 1))
+                                          :source (xna:make-rectangle 40 40 1 1)
+                                          :start-index 0 :element-count 1)
                                          0)))
                         (format nil "~d,~d,~d,~d"
                                 (xna:color-r pixel) (xna:color-g pixel)
@@ -260,7 +262,8 @@ vertices land at (0,0), (240,0) and (0,144), so (40,40) is inside it."
                   (handler-case
                       (let ((pixel (aref (gfx:get-back-buffer-data
                                           device
-                                          :source (xna:make-rectangle 30 414 1 1))
+                                          :source (xna:make-rectangle 30 414 1 1)
+                                          :start-index 0 :element-count 1)
                                          0)))
                         (format nil "~d,~d,~d,~d"
                                 (xna:color-r pixel) (xna:color-g pixel)
@@ -274,7 +277,8 @@ vertices land at (0,0), (240,0) and (0,144), so (40,40) is inside it."
                   (handler-case
                       (let ((pixel (aref (gfx:get-back-buffer-data
                                           device
-                                          :source (xna:make-rectangle 18 24 1 1))
+                                          :source (xna:make-rectangle 18 24 1 1)
+                                          :start-index 0 :element-count 1)
                                          0)))
                         (format nil "~d,~d,~d,~d"
                                 (xna:color-r pixel) (xna:color-g pixel)
