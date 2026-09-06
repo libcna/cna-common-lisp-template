@@ -12,7 +12,7 @@ and then draws that target onto the screen, draws a string with the loaded font,
 and draws the sprite moving along a Lissajous path while it rotates and pulses.
 In interactive mode it exits on Escape.
 
-[binding]: https://github.com/openeggbert/cna-common-lisp
+[binding]: https://github.com/libcna/cna-common-lisp
 
 ## What this proves, and what it does not
 
