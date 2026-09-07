@@ -66,7 +66,15 @@ counts every native callback it received."))
         (make-instance 'xna:graphics-device-manager :game game)))
 
 (defmethod xna:initialize ((game hello-game))
-  (incf (initialize-count game)))
+  (incf (initialize-count game))
+  ;; **Always call the next method from INITIALIZE**, exactly as an XNA game
+  ;; always calls `base.Initialize()'. It is not bookkeeping: XNA's base
+  ;; `Initialize' is where `HookDeviceEvents' runs, so an override that skips it
+  ;; leaves the game subscribed to none of its graphics device's events -- and
+  ;; the one that matters is `DeviceDisposing', which is what unloads
+  ;; `Game.Content' when the device goes away. A game that skips it keeps every
+  ;; asset it loaded.
+  (call-next-method))
 
 (defmethod xna:load-content ((game hello-game))
   (incf (load-count game))
